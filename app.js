@@ -70,17 +70,17 @@ app.use(function(err, req, res, next) {
 //   var res = notp.hotp.verify(HOTP[i], key, opt);
 // }
 
-var key = "12345678901234567890";
-var opt = {
-  window: 0
-};
+// var key = "12345678901234567890";
+// var opt = {
+//   window: 0
+// };
 
-// make sure we can not pass in opt
-notp.totp.gen(key);
+// // make sure we can not pass in opt
+// notp.totp.gen(key);
 
-// counterheck for test vector at 59s
-opt._t = 59 * 1000;
-console.log(notp.totp.gen(key, opt));
-//assert.equal(notp.totp.gen(key, opt), "236658", "TOTtoken values should match");
+// // counterheck for test vector at 59s
+// opt._t = 59 * 1000;
+// console.log(notp.totp.gen(key, opt));
+// assert.equal(notp.totp.gen(key, opt), "236658", "TOTtoken values should match");
 
-module.exports = app;
+// module.exports = app;
