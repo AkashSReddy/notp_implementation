@@ -6,18 +6,38 @@ var logger = require("morgan");
 var assert = require("assert");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var mongoose = require("mongoose");
+const passport = require("passport");
+const localstrategy = require("passport-local");
 var notp = require("./middleware/otp");
 var app = express();
+const session = require("express-session");
+const auth = require("./middleware/authentication");
+require("dotenv").config();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+mongoose.connect("mongodb://localhost/crypto");
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+  session({
+    secret: "Ferrari 488GTB",
+    resave: false,
+    saveUninitialized: false
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+require("./config/passport")(passport);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
@@ -83,4 +103,4 @@ app.use(function(err, req, res, next) {
 // console.log(notp.totp.gen(key, opt));
 // assert.equal(notp.totp.gen(key, opt), "236658", "TOTtoken values should match");
 
-// module.exports = app;
+module.exports = app;

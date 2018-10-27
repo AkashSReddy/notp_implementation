@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt-nodejs");
 const salt_factor = 8;
+mongoose.set("useCreateIndex", true);
 
 const userSchema = mongoose.Schema({
   name: String,

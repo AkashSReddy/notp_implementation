@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+
+</head>
+<style>
+    body {
+        font-size: 24px;
+        background: black;
+        font-family: 'Poppins', sans-serif;
+        color: #b5cc18;
+
+    }
+
+    .form {
+        width: 500px;
+        margin: 0 auto;
+        background: rgba(27, 27, 27, 0.397);
+        border: #92db13 1px solid;
+        margin-top: 150px;
+    }
+
+
+
+    h1 {
+        background: black;
+        text-align: left;
+        color: #b5cc18;
+        display: inline-block;
+        text-align: center;
+        background: black;
+        border-left: #b5cc18 3px solid;
+        text-align: left;
+        width: 100%;
+        color: #b5cc18;
+        padding: 12px;
+        font-size: 1.75em;
+    }
+
+    form {
+        background: white;
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    .has-error {
+        background: #e85140 !important;
+    }
+
+    .no-error {
+        background: #92db13 !important;
+    }
+</style>
+
+<body ng-app="">
+    <h1 class="header">
+        <%=title %>
+    </h1>
+    <div class="userForm">
+        <form name="userForm" action="/register" method="POST" class="ui form" novalidate>
+            <h3 class="ui center aligned dividing header olive huge text">Register</h3>
+            <div class="field">
+                <label style="color:#b5cc18;font-size:20px;margin: 20px 0 10px 0;">Username</label>
+                <div class="ui big left icon input">
+                    <input type="text" placeholder="username" name="userName" class="input-field" ng-model="userName"
+                        required><i class="user icon"></i>
+                </div>
+                <div class="field">
+                    <label style="color:#b5cc18;font-size:20px;margin: 20px 0 10px 0;">Email</label>
+                    <div class="ui big left icon input">
+                        <input type="email" name="email" placeholder="abc@gmail.com" class="input-field" ng-model="user.email"
+                            required ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine,'no-error' :!userForm.email.$invalid }" /><i
+                            class="envelope icon"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <label style="color:#b5cc18;font-size:20px;margin: 20px 0 10px 0;">Password</label>
+                    <div class="ui big left icon input">
+                        <input type="password" name="password" ng-model="user.password" ng-minlength="5" ng-maxlength="20"
+                            placeholder="password" class="input-field" required /><i class="lock icon"></i>
+                    </div>
+                </div>
+                <div class="ui center aligned" style="text-align:center;margin-top: 25px;">
+                    <button type="submit" class="ui olive button big" ng-disabled="userForm.$invalid">Submit</button>
+                </div>
+        </form>
+    </div>
+    </div>
+    </p>
+</body>
+
+</html>
