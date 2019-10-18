@@ -27,15 +27,15 @@ router.get("/register", (req, res, next) => {
   res.render("register", { title: "Crypto" });
 });
 
-router.post("/register", function(req, res, next) {
+router.post("/register", function (req, res, next) {
   return database
     .addUser(req.body)
-    .then(function() {
+    .then(function () {
       passport.authenticate("login", {
         successRedirect: "/",
         failureRedirect: "/login",
         failureFlash: true
-      })(req, res, function() {
+      })(req, res, function () {
         res.redirect("/home");
       });
     })
@@ -55,11 +55,13 @@ router.post(
   })
 );
 
+//logout route
 router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");
 });
 
+//Routes for 2step auth
 router.get("/2step", (req, res, next) => {
   // // make sure we can not pass in opt
   // notp.totp.gen(key);
