@@ -3,9 +3,7 @@ const path = require("path");
 const User = require("../models/user");
 require("dotenv").config();
 
-/**
- * @function getUsers
- */
+//Get users function
 module.exports.getUsers = () => {
   return new Promise((resolve, reject) => {
     try {
@@ -21,10 +19,7 @@ module.exports.getUsers = () => {
   });
 };
 
-/**
- * @function addUser
- * @param {Object}
- */
+// Add users function
 module.exports.addUser = userDetails => {
   return new Promise((resolve, reject) => {
     try {
@@ -53,10 +48,7 @@ module.exports.addUser = userDetails => {
   });
 };
 
-/**
- * @function deleteUser
- * @param {Object}
- */
+// Delete users function
 module.exports.deleteUser = id => {
   return new Promise((resolve, reject) => {
     try {
