@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        <%= title %>
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+
+        <title>
+            <%= title %>
+        </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+
+
+
+    </head>
+    <style>
+        body {
+        font-size: 24px;
+        /* background: #DADADA; */
+        background: black;
+        font-family: 'Poppins', sans-serif;
+        color: #b5cc18;
+    }
+
+    .form {
+        width: 500px;
+        padding-top: 50px;
+        margin: 0 auto;
+
+    }
+
+    h1 {
+
+        display: inline-block;
+        text-align: center;
+        background: black;
+        border-left: #b5cc18 3px solid;
+        text-align: left;
+        width: 100%;
+        color: #b5cc18;
+        padding: 12px;
+        font-size: 3em;
+
+    }
+
+    form {
+        background: rgba(27, 27, 27, 0.397);
+        padding: 12px 20px;
+        margin-top: 150px;
+        border-radius: 6px;
+        border: #92db13 1px solid;
+        position: absolute;
+
+
+    }
+
+    .has-error {
+        background: #e85140 !important;
+    }
+
+    .no-error {
+        background: #92db13 !important;
+    }
+
+    .centering {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    label {
+        color: #b5cc18;
+        font-size: 2em;
+    }
+</style>
+
+<body ng-app="" style="background: black">
+    <h1>
+        <%= title %>
+    </h1>
+    <div class="ui two column middle aligned relaxed fitted grid" style="margin-top: 8%;">
+        <div class="four wide column"></div>
+        <div class="eight wide column">
+
+            <div class="field">
+                <form name="userForm" method="POST" class="ui form" action="/login" novalidate>
+                    <h3 class="ui center aligned dividing header olive huge text">Login</h3>
+
+
+                    <div class="field">
+                        <label style="color:#b5cc18 ;font-size:20px;margin: 20px 0 10px 0;">Email</label>
+                        <div class="ui big left icon input">
+                            <input type="email" name="email" placeholder="abc@gmail.com" class="input-field" ng-model="email"
+                                required ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine,'no-error' :!userForm.email.$invalid }" />
+                            <i class="envelope icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label style="color:#b5cc18;font-size:20px;margin: 20px 0 10px 0;">Password</label>
+                        <div class="ui big left icon input">
+                            <input type="password" name="password" ng-model="user.password" placeholder="Password"
+                                class="input-field" required ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine,'no-error' :!userForm.password.$invalid }" />
+                            <i class="lock icon"></i>
+                        </div>
+                    </div>
+                    <div class="ui center aligned" style="margin-top: 25px;text-align: center;">
+                        <button type="submit" class="ui olive button big" ng-disabled="userForm.$invalid">Log in</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <div class="four wide column"></div>
+
+    </div>
+</body>
+
+</html>
+</head>
+<style>
+    body {
+        font-size: 24px;
+        /* background: #DADADA; */
+        background: black;
+        font-family: 'Poppins', sans-serif;
+        color: #b5cc18;
+    }
+
+    .form {
+        width: 500px;
+        padding-top: 50px;
+        margin: 0 auto;
+
+    }
+
+    h1 {
+
+        display: inline-block;
+        text-align: center;
+        background: black;
+        border-left: #b5cc18 3px solid;
+        text-align: left;
+        width: 100%;
+        color: #b5cc18;
+        padding: 12px;
+        font-size: 3em;
+
+    }
+
+    form {
+        background: rgba(27, 27, 27, 0.397);
+        padding: 12px 20px;
+        margin-top: 150px;
+        border-radius: 6px;
+        border: #92db13 1px solid;
+        position: absolute;
+
+
+    }
+
+    .has-error {
+        background: #e85140 !important;
+    }
+
+    .no-error {
+        background: #92db13 !important;
+    }
+
+    .centering {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    label {
+        color: #b5cc18;
+        font-size: 2em;
+    }
+</style>
+
+<body ng-app="" style="background: black">
+    <h1>
+        <%= title %>
+    </h1>
+    <div class="ui two column middle aligned relaxed fitted grid" style="margin-top: 8%;">
+        <div class="four wide column"></div>
+        <div class="eight wide column">
+
+            <div class="field">
+                <form name="userForm" method="POST" class="ui form" action="/login" novalidate>
+                    <h3 class="ui center aligned dividing header olive huge text">Login</h3>
+
+
+                    <div class="field">
+                        <label style="color:#b5cc18 ;font-size:20px;margin: 20px 0 10px 0;">Email</label>
+                        <div class="ui big left icon input">
+                            <input type="email" name="email" placeholder="abc@gmail.com" class="input-field" ng-model="email"
+                                required ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine,'no-error' :!userForm.email.$invalid }" />
+                            <i class="envelope icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label style="color:#b5cc18;font-size:20px;margin: 20px 0 10px 0;">Password</label>
+                        <div class="ui big left icon input">
+                            <input type="password" name="password" ng-model="user.password" placeholder="Password"
+                                class="input-field" required ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine,'no-error' :!userForm.password.$invalid }" />
+                            <i class="lock icon"></i>
+                        </div>
+                    </div>
+                    <div class="ui center aligned" style="margin-top: 25px;text-align: center;">
+                        <button type="submit" class="ui olive button big" ng-disabled="userForm.$invalid">Log in</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <div class="four wide column"></div>
+
+    </div>
+</body>
+
+</html>

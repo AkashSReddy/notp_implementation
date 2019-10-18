@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <p>Second and Third Step verification
+    </p>
+
+    <form action="/2step" method="POST">
+        <input type="number" Placeholder="TOTP" name="TOTP">
+        <input type="number" Placeholder="HOTP" name="HOTP">
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
